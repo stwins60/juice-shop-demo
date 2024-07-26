@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit --nvdApiKey f9c669af-b15f-4487-9d6d-d930c8f1b7a4', odcInstallation: 'DP-Check'
-                    dependencyCheck additionalArguments: '-scan ./ --disableYarnAudit --disableNodeAudit', nvdCredentialsId: 'ed62b912-6db4-4d3a-a445-a1799077253e', odcInstallation: 'DP-Check', stopBuild: true
+                    dependencyCheck additionalArguments: '-scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check', stopBuild: true
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
                 }
             }
