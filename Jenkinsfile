@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_TAG = "V.0.0.${env.BUILD_NUMBER}"
         DOCKERHUB_CREDENTIALS = credentials('5f8b634a-148a-4067-b996-07b4b3276fba')
-        DOCKERHUB_USERNAME = DOCKERHUB_CREDENTIALS_USR
+        DOCKERHUB_USERNAME = "idrisniyi94"
         DEPLOYMENT_NAME = "juice-shop"
         STAGING_IMAGE_NAME = "${DOCKERHUB_USERNAME}/${DEPLOYMENT_NAME}-staging:${IMAGE_TAG}"
         QA_IMAGE_NAME = "${DOCKERHUB_USERNAME}/${DEPLOYMENT_NAME}-qa:${IMAGE_TAG}"
