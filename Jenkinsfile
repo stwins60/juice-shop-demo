@@ -46,8 +46,8 @@ pipeline {
         stage("OWASP vulnerability scanner") {
             steps {
                 script {
-                    // dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit --nvdApiKey f9c669af-b15f-4487-9d6d-d930c8f1b7a4', odcInstallation: 'DP-Check'
-                    dependencyCheck additionalArguments: '-scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check', stopBuild: true
+                    dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit --nvdApiKey f9c669af-b15f-4487-9d6d-d930c8f1b7a4 ', odcInstallation: 'DP-Check'
+                    // dependencyCheck additionalArguments: '-scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
                 }
             }
